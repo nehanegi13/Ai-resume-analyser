@@ -17,9 +17,9 @@ export default function Home() {
   const { auth } = usePuterStore();
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useEffect(() => { 
     if (!auth.isAuthenticated) navigate("/auth?next=/");
-  }, [auth.isAuthenticated]);
+  }, [auth.isAuthenticated]); 
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
       <Navbar />
