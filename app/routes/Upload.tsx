@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "~/components/Navbar";
-import FileUploader from "./FileUploader";
+import FileUploader from "../components/FileUploader";
 
 const Upload = () => {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -45,9 +45,9 @@ const Upload = () => {
                   id="job-title"
                 />{" "}
               </div>
-              <div className="form-div">
+              <div className="form-div ">
                 <label htmlFor="uploader">Upload Resume </label>
-                <div><FileUploader /></div>
+                <FileUploader />
               </div>
               <button className="primary-button" type="submit">
                 Analyze Resume
