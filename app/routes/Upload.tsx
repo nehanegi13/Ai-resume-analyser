@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "~/components/Navbar";
 
 const Upload = () => {
-  const [isProcessing, setIsProcessing] = useState(true);
+  const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {};
   return (
@@ -27,7 +27,13 @@ const Upload = () => {
               className="flex flex-col gap-4 "
             >
               <div className="form-div">
-                
+                <label htmlFor="company-name"> Company Name </label>
+                <input
+                  type="text"
+                  name="company-name"
+                  placeholder="company-name"
+                  id="company-name"
+                />
               </div>
             </form>
           )}
