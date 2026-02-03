@@ -10,7 +10,7 @@ const Upload = () => {
       <Navbar />
 
       <section className="main-section">
-        <div className="page-heading">
+        <div className="page-heading  ">
           <h1>Smart feedback for your dream job</h1>
           {isProcessing ? (
             <>
@@ -24,7 +24,7 @@ const Upload = () => {
             <form
               id="upload form "
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 "
+              className="flex flex-col gap-4 mt-8 "
             >
               <div className="form-div">
                 <label htmlFor="company-name"> Company Name </label>
@@ -33,6 +33,20 @@ const Upload = () => {
                   name="company-name"
                   placeholder="company-name"
                   id="company-name"
+                />
+                <label htmlFor="job-title"> Job Title </label>
+                <input
+                  type="text"
+                  name="job-title"
+                  placeholder="job-title"
+                  id="job-title"
+                />
+                <label htmlFor="job-description"> Job Description </label>
+                <textarea
+                  rows={5}
+                  name="job-description"
+                  placeholder="job-description"
+                  id="job-description"
                 />
               </div>
             </form>
