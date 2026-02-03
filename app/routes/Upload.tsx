@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "~/components/Navbar";
+import FileUploader from "./FileUploader";
 
 const Upload = () => {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -45,14 +46,12 @@ const Upload = () => {
                 />{" "}
               </div>
               <div className="form-div">
-                <label htmlFor="job-description"> Job Description </label>
-                <textarea
-                  rows={5}
-                  name="job-description"
-                  placeholder="job-description"
-                  id="job-description"
-                />
+                <label htmlFor="uploader">Upload Resume </label>
+                <div><FileUploader /></div>
               </div>
+              <button className="primary-button" type="submit">
+                Analyze Resume
+              </button>
             </form>
           )}
         </div>
