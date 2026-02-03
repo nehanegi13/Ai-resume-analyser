@@ -34,13 +34,17 @@ const Upload = () => {
                   placeholder="company-name"
                   id="company-name"
                 />
+              </div>
+              <div className="form-div">
                 <label htmlFor="job-title"> Job Title </label>
                 <input
                   type="text"
                   name="job-title"
                   placeholder="job-title"
                   id="job-title"
-                />
+                />{" "}
+              </div>
+              <div className="form-div">
                 <label htmlFor="job-description"> Job Description </label>
                 <textarea
                   rows={5}
