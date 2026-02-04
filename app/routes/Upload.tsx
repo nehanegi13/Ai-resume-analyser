@@ -5,6 +5,14 @@ import FileUploader from "../components/FileUploader";
 const Upload = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
+  const [file, setFile] = useState()
+
+    const handleFileSelect = (file: File | null) => {
+        setFile(file)
+    }
+   
+ }
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {};
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
