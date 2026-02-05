@@ -17,14 +17,12 @@ const Upload = () => {
     if (!form) return;
     const formData = new FormData(form);
 
-    const companyName = formData.get("company-name") as string;
-    const jobTitle = formData.get("job-title") as string;
+    const companyName = formData.get("company-name");
+    const jobTitle = formData.get("job-title");
 
-    console.log({
-      companyName,
-      jobTitle,
-      file,
-    });
+    const handleFileSelect = (file: File | null) => {
+      setFile(file);
+    };
   };
 
   return (
