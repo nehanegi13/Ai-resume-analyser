@@ -5,13 +5,28 @@ import FileUploader from "../components/FileUploader";
 const Upload = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
-  const [file, setFile] = useState<File | null>(null)
+  const [file, setFile] = useState<File | null>(null);
 
   const handleFileSelect = (file: File | null) => {
-      setFile(file)
-  }
+    setFile(file);
+  };
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {};
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget.closest("form");
+    if (!form) return;
+    const formData = new FormData(form);
+
+    const companyName = formData.get("company-name") as string;
+    const jobTitle = formData.get("job-title") as string;
+
+    console.log({
+      companyName,
+      jobTitle,
+      file,
+    });
+  };
+
   return (
     <main className="bg-[url('/images/bg-main.svg')] bg-cover">
       <Navbar />
@@ -64,7 +79,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {};
         </div>
       </section>
     </main>
-  )
-}
+  );
+};
 
 export default Upload;
