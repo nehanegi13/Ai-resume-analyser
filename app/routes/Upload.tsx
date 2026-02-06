@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Navbar from "~/components/Navbar";
 import FileUploader from "../components/FileUploader";
 import { usePuterStore } from "lib/puter";
+import { useNavigate } from "react-router";
 
 const Upload = () => {
-  const { auth, fs, isLoading, ai, kv } = usePuterStore();
+  const { auth, fs, isLoading, ai, kv } = usePuterStore(); //fs means file storage
+  const navigate = useNavigate();
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
   const [file, setFile] = useState<File | null>(null);
