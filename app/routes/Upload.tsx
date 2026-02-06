@@ -29,6 +29,7 @@ const Upload = () => {
     setIsProcessing: true;
     setStatusText: "uploading the file...";
     const uploadedFile = await fs.upload([file]);
+    if (!uploadedFile) return setStatusText("Error: Failed to upload file ");
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
