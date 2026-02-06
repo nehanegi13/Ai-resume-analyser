@@ -11,6 +11,8 @@ const Upload = () => {
     setFile(file);
   };
 
+  const handleAnalyze = async ({companyName , jobTitle , jobDescription , file }: { companyName: string ; jobTitle: string; jobDescription: string; file: File; }) => {};
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget.closest("form");
@@ -19,10 +21,15 @@ const Upload = () => {
 
     const companyName = formData.get("company-name");
     const jobTitle = formData.get("job-title");
+    const jobDescription = formData.get("job-description");
 
-    const handleFileSelect = (file: File | null) => {
-      setFile(file);
-    };
+    if (!file) return;
+    handleAnalyze({
+      companyName: companyName as string,
+      jobTitle: jobTitle as string,
+      jobDescription: jobDescription as string,
+      file: file,
+    });
   };
 
   return (
