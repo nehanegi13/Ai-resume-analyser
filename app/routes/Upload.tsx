@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import Navbar from "~/components/Navbar";
 import FileUploader from "../components/FileUploader";
+import { usePuterStore } from "lib/puter";
 
 const Upload = () => {
+  const { auth, fs, isLoading, ai, kv } = usePuterStore();
   const [isProcessing, setIsProcessing] = useState(false);
   const [statusText, setStatusText] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -11,7 +13,21 @@ const Upload = () => {
     setFile(file);
   };
 
-  const handleAnalyze = async ({companyName , jobTitle , jobDescription , file }: { companyName: string ; jobTitle: string; jobDescription: string; file: File; }) => {};
+  const handleAnalyze = async ({
+    companyName,
+    jobTitle,
+    jobDescription,
+    file,
+  }: {
+    companyName: string;
+    jobTitle: string;
+    jobDescription: string;
+    file: File;
+  }) => {
+    setIsProcessing: true;
+    setStatusText: "uploading the file...";
+    const uploadedFile = await fs.upload([file]);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
